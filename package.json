@@ -1,0 +1,20 @@
+{
+  "name": "20210801gitstart",
+  "version": "1.0.0",
+  "description": "READ.md 라는 파일은 프로젝트의 소개글을 의미한다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaemanLee-hub/20210801GitStart.git"
+  },
+  "author": "jm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaemanLee-hub/20210801GitStart/issues"
+  },
+  "homepage": "https://github.com/JaemanLee-hub/20210801GitStart#readme"
+
+}
