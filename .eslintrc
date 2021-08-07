@@ -1,0 +1,18 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6, //Js 버젼
+      "sourceType": "module"
+    },
+    "plugins": ["import", "node", "promise", "standard"],
+    "env": { // 코드환경
+      "browser": true,
+      "node": true,
+    },
+    "extends": [ // 디폴트 룰
+      "eslint:recommended",
+    ],
+    "rules": { // 실질적인 커스텀룰
+      "no-console": "warn"
+    }
+  }

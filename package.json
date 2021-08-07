@@ -15,6 +15,13 @@
   "bugs": {
     "url": "https://github.com/JaemanLee-hub/20210801GitStart/issues"
   },
-  "homepage": "https://github.com/JaemanLee-hub/20210801GitStart#readme"
-
+  "homepage": "https://github.com/JaemanLee-hub/20210801GitStart#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0"
+  }
 }
