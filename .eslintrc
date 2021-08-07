@@ -11,6 +11,7 @@
     },
     "extends": [ // 디폴트 룰
       "eslint:recommended",
+      "plugin:prettier/recommended"
     ],
     "rules": { // 실질적인 커스텀룰
       "no-console": "warn"
