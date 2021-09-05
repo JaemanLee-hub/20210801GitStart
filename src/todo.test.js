@@ -1,6 +1,8 @@
 /*
  * TODO : id값(1,2,3,4), 내용, 완료여부
  */
+//  자기자신에 이벤트줄때 / evernt.target
+const FILTER_TYPES = ['ALL', 'ACTIVE', 'COMPLETED']
 
 const todos1 = {
   id: 1,
@@ -30,6 +32,13 @@ const todoTest2 = [todos1]
 const todoTest3 = [todos1, todos2]
 const todoTest4 = [todos1, todos2, todos3, todos4]
 
+/*
+ *전체 4개
+ * ACTIVE 3개
+ * completed
+ */
+
+function filterTodo(type, todoTest4) {}
 describe('TODO 테스트', () => {
   it('추가 - 하나의 TODO를 추가하면 todos 배열의 length는 1이된다', () => {
     const todos1 = {
