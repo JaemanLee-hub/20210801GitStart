@@ -16,12 +16,29 @@ class Todos {
   constructor() {
     this.todos = []
   }
+  //추가
   addTodo(memo) {
     this.todos = [...this.todos, new Todo(Date.now(), memo, false)]
   }
+  addTodo2(memo) {
+    this.todos = [...this.todos, new Todo(Date.now(), memo, true)]
+  }
+  //제거
   removeTodo(id) {
     this.todos = this.todos.filter((todo) => {
       return todo.id !== id
+    })
+  }
+  //수정
+  modifyTodo() {
+    this.todos = this.todos.map((todo) => {
+      return todo.isDone === false ? true : false
+    })
+  }
+  //완료상태 확인
+  statusTodo() {
+    this.todos = this.todos.filter((todo) => {
+      return todo.isDone
     })
   }
   size() {
@@ -43,6 +60,19 @@ describe('TODO 테스트', () => {
     todoManager.removeTodo(todoManager.todos[0].id)
     expect(todoManager.size()).toBe(0)
   })
-  it('수정 - 완료상태가 false 값을 업데이트하면 true가 된다', () => {})
-  it('필터링 - 완료상태인 todos의 length는 3개 일 것이다(완료3개 미완료1개값 추가한상태)', () => {})
+  it('수정 - 완료상태가 false 값을 업데이트하면 true가 된다', () => {
+    const todoManager = new Todos()
+    todoManager.addTodo('새로운 아이디')
+    todoManager.modifyTodo(this)
+    expect(todoManager.todos[2]).toBe(true)
+  })
+  it('필터링 - 완료상태인 todos의 length는 3개 일 것이다(완료3개 미완료1개값 추가한상태)', () => {
+    const todoManager = new Todos()
+    todoManager.addTodo('새로운 아이디')
+    todoManager.addTodo2('새로운 아이디2')
+    todoManager.addTodo2('새로운 아이디3')
+    todoManager.addTodo2('새로운 아이디4')
+    todoManager.statusTodo(this)
+    expect(todoManager.size()).toBe(3)
+  })
 })
