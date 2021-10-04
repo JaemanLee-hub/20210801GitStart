@@ -1,0 +1,9 @@
+{
+    "user":{
+        "id" :0,
+        "email": "gand123@naver.com",
+        "password":"1234",
+        "name" :"이재만",
+        "phone":"010-5564-6454"
+    }
+}

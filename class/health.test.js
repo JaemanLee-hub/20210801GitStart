@@ -64,22 +64,31 @@ class Trainers {
   }
 
   //트레이너 라이센스업데이트
-  updateLicense(license) {
+  updateLicense(id, license) {
     const result = this.trainer.map((trainer) => {
-      if (trainer.license !== license) {
+      if (trainer.id !== id) {
         return trainer
       }
-      return { ...result, license: trainer.license }
+      //
+      return { ...trainer, license }
     })
   }
 
   //라이센스 타입 필터 type 1 ,2 ,3
+  // 필터는 filter는 true애들을 골라내는 배열의 프로토타입 메소드이기 떄문에 레벨값을 받아서 true인 애들만 리턴시킨다.
+  filterLicence(level) {
+    //console.log(this.trainers)
+    return this.trainers.filter((trainer) => {
+      return trainer.license === level
+    })
+  }
+
   filter(license) {
     switch (license) {
       case '1': {
         return this.trainers.filter((trainer) => {
-          if (license === '1') {
-            return this.trainers
+          if (trainer.license === '1') {
+            return trainer
           }
         })
       }
@@ -120,16 +129,19 @@ describe('헬스 테스트', () => {
   it('삭제', () => {
     const trainerManger = new Trainers()
     trainerManger.addTrainer('3', true)
-    trainerManger.removeTrainer(trainerManger.trainers[0].name)
+    trainerManger.removeTrainer(trainerManger.trainers[0].id)
     expect(trainerManger.size()).toBe(0)
   })
 
   it('라이센스필터', () => {
     const trainerManger = new Trainers()
-    trainerManger.filter('1')
-    trainerManger.filter('2')
-    trainerManger.filter('3')
-    expect(trainerManger.getCompletedTrainer().length).toBe(0)
+
+    trainerManger.addTrainer('1', true)
+    trainerManger.addTrainer('1', true)
+    trainerManger.addTrainer('2', true)
+    trainerManger.addTrainer('3', true)
+    //1004
+    expect(trainerManger.filterLicence('1').length).toBe(2)
   })
 
   it('출퇴근토글', () => {
