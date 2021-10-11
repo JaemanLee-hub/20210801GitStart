@@ -14,8 +14,7 @@ document.getElementById('btn_submit').addEventListener('click', () => {
       //console.log(data)
       const mail = document.getElementById('email').value
       const pwd = document.getElementById('password').value
-      const createNameP = document.createElement('p')
-      const createEmailP = document.createElement('p')
+
       if (!mail || !pwd) {
         alert('로그인실패')
         return false
@@ -23,6 +22,8 @@ document.getElementById('btn_submit').addEventListener('click', () => {
 
       if (mail === data.email && pwd === data.password) {
         alert('로그인성공')
+        const createNameP = document.createElement('p')
+        const createEmailP = document.createElement('p')
         createNameP.textContent = data.name
         createEmailP.textContent = data.email
         document.getElementById('login').appendChild(createNameP)

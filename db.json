@@ -1,9 +1,29 @@
 {
-    "user":{
-        "id" :0,
-        "email": "gand123@naver.com",
-        "password":"1234",
-        "name" :"이재만",
-        "phone":"010-5564-6454"
+  "user": {
+    "id": 0,
+    "email": "gand123@naver.com",
+    "password": "1234",
+    "name": "이재만",
+    "phone": "010-5564-6454"
+  },
+  "trainers": [
+    {
+      "name": "이재만",
+      "level": "123",
+      "attendanceStatus": "Done",
+      "id": 1
+    },
+    {
+      "name": "이재만",
+      "level": "123",
+      "attendanceStatus": "Done",
+      "id": 2
+    },
+    {
+      "name": "이재만",
+      "level": "1",
+      "attendanceStatus": "Done",
+      "id": 3
     }
+  ]
 }
