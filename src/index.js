@@ -1,13 +1,26 @@
-import add from './add'
-import abc, { addName, foo } from './addName'
-import User from './user'
+import Router from './router'
 
-const result = add(10, 20)
-const resultName = addName('이재만')
-const resultUser = new User('김자맨', 5)
+import HomePage from './pages/home'
+import MyPage from './pages/my'
+import SigninPage from './pages/signin'
+import SignupPage from './pages/signup'
 
-console.log(result)
-console.log(resultName)
-console.log(foo)
-console.log(abc())
-console.log(resultUser.name)
+const ROUTES = {
+  '/': HomePage,
+  '/signin': SigninPage,
+  '/signup': SignupPage,
+  '/my': MyPage,
+}
+
+class App {
+  constructor() {
+    //특정 주소로 들어오면 주소에맞는 컴포넌트를 띄워준다
+    // 두개의 인자 (app : 어디에그릴지 , routes:어떤주소가 어떤 컴포넌트를 그릴지)
+    this.router = new Router({
+      app: document.getElementById('app'),
+      routes: ROUTES,
+    })
+  }
+}
+
+new App()

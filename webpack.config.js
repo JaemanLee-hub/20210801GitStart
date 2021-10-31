@@ -1,5 +1,5 @@
 //webpack 설정파일
-
+//바벨은 코드를변환 웹팩은 파일변환
 //경로설정 path
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [{ test: /\.(js)$/, use: 'babel-loader' }],
@@ -17,16 +18,14 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
   },
-  plugin: [
+  plugins: [
     new HtmlWebpackPlugin({
       templete: './public/index.html',
-      fileneme: './index.html',
+      fileneme: './index.html', //빌드된 html파일 이름
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    inline: true,
-    hot: true,
     open: true,
+    historyApiFallback: true,
   },
 }
