@@ -1,7 +1,7 @@
 class HomePage {
   constructor() {}
   render() {
-    return `<div>HomePage`
+    return `<div>HomePage</div>`
   }
 }
 

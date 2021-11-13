@@ -4,12 +4,14 @@ import HomePage from './pages/home'
 import MyPage from './pages/my'
 import SigninPage from './pages/signin'
 import SignupPage from './pages/signup'
+import NotFoundPage from './pages/notfound'
 
 const ROUTES = {
   '/': HomePage,
   '/signin': SigninPage,
   '/signup': SignupPage,
   '/my': MyPage,
+  '/404': NotFoundPage,
 }
 
 class App {

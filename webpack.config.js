@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      templete: './public/index.html',
+      template: './public/index.html',
       fileneme: './index.html', //빌드된 html파일 이름
     }),
   ],
